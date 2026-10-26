@@ -1,0 +1,297 @@
+
+        :root {
+            --page-bg: #101318;
+            --panel-bg: #151a23;
+            --panel-inner: #1b222e;
+            --panel-border: #2c3442;
+            --text-main: #f5f7fb;
+            --text-muted: #98a4b6;
+            --accent: #4f8cff;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background: var(--page-bg);
+            color: var(--text-main);
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        .main-content {
+            min-height: 100vh;
+            margin-left: 250px;
+            padding: 38px;
+        }
+
+        .dashboard-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            color: var(--accent);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .dashboard-header h1 {
+            margin: 0 0 8px;
+            color: var(--text-main);
+            font-size: clamp(1.7rem, 3vw, 2.2rem);
+            font-weight: 750;
+            letter-spacing: -.035em;
+        }
+
+        .welcome-text, .section-subtitle {
+            color: var(--text-muted);
+        }
+
+        .welcome-text { margin: 0; }
+
+        .welcome-text strong { color: var(--text-main); }
+
+        .stat-card {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+            padding: 24px;
+            border: 1px solid var(--panel-border);
+            border-radius: 18px;
+            background: linear-gradient(145deg, #191f2a, #141922);
+            box-shadow: 0 12px 28px rgb(0 0 0 / 12%);
+            transition: transform .2s ease, border-color .2s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            border-color: #46536a;
+        }
+
+        .stat-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .stat-label {
+            margin: 0 0 12px;
+            color: var(--text-muted);
+            font-size: .9rem;
+            font-weight: 500;
+        }
+
+        .stat-number {
+            color: var(--text-main);
+            font-size: clamp(1.8rem, 3vw, 2.35rem);
+            font-weight: 750;
+            line-height: 1.1;
+            letter-spacing: -.04em;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .stat-icon {
+            display: grid;
+            width: 48px;
+            height: 48px;
+            flex: 0 0 48px;
+            place-items: center;
+            border: 1px solid rgb(79 140 255 / 22%);
+            border-radius: 14px;
+            background: rgb(79 140 255 / 12%);
+            color: #79a8ff;
+            font-size: 1.35rem;
+        }
+
+        .stat-card.pending .stat-icon {
+            color: #f4c76b;
+            background: rgb(244 199 107 / 10%);
+            border-color: rgb(244 199 107 / 22%);
+        }
+
+        .stat-card.progress .stat-icon {
+            color: #75b8ff;
+            background: rgb(117 184 255 / 10%);
+            border-color: rgb(117 184 255 / 22%);
+        }
+
+        .stat-card.completed .stat-icon {
+            color: #6ed6a1;
+            background: rgb(110 214 161 / 10%);
+            border-color: rgb(110 214 161 / 22%);
+        }
+
+        .section-card {
+            overflow: hidden;
+            border: 1px solid var(--panel-border);
+            border-radius: 18px;
+            background: var(--panel-bg);
+            box-shadow: 0 12px 28px rgb(0 0 0 / 10%);
+        }
+
+        .section-heading {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 24px 24px 18px;
+        }
+
+        .section-heading h2 {
+            margin: 0 0 6px;
+            color: var(--text-main);
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            margin: 0;
+            font-size: .88rem;
+        }
+
+        .record-count {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 7px 11px;
+            border: 1px solid var(--panel-border);
+            border-radius: 999px;
+            color: #cbd5e1;
+            background: var(--panel-inner);
+            font-size: .8rem;
+            white-space: nowrap;
+        }
+
+        .table-responsive { border-top: 1px solid var(--panel-border); }
+
+        .table-dashboard {
+            --bs-table-bg: transparent;
+            --bs-table-color: #dbe2ec;
+            --bs-table-border-color: #28303c;
+            --bs-table-hover-bg: #1b2330;
+            --bs-table-hover-color: #fff;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .table-dashboard thead th {
+            padding: 15px 24px;
+            border-bottom: 1px solid var(--panel-border);
+            background: #181e28;
+            color: #98a4b6;
+            font-size: .76rem;
+            font-weight: 700;
+            letter-spacing: .045em;
+            text-transform: uppercase;
+        }
+
+        .table-dashboard tbody td {
+            padding: 17px 24px;
+            vertical-align: middle;
+        }
+
+        .repair-id {
+            color: #8fa0b7;
+            font-size: .85rem;
+            font-weight: 650;
+        }
+
+        .equipment-name {
+            color: #f3f6fb;
+            font-weight: 600;
+        }
+
+        .table-muted {
+            color: var(--text-muted);
+            font-size: .9rem;
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 10px;
+            border: 1px solid transparent;
+            border-radius: 999px;
+            font-size: .78rem;
+            font-weight: 650;
+        }
+
+        .status::before {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: currentColor;
+            content: "";
+        }
+
+        .status-pending {
+            color: #f4c76b;
+            background: rgb(244 199 107 / 10%);
+            border-color: rgb(244 199 107 / 22%);
+        }
+
+        .status-progress {
+            color: #7dbbff;
+            background: rgb(125 187 255 / 10%);
+            border-color: rgb(125 187 255 / 22%);
+        }
+
+        .status-completed {
+            color: #6ed6a1;
+            background: rgb(110 214 161 / 10%);
+            border-color: rgb(110 214 161 / 22%);
+        }
+
+        .status-unknown {
+            color: #c5ccd8;
+            background: rgb(197 204 216 / 8%);
+            border-color: rgb(197 204 216 / 16%);
+        }
+
+        .empty-state {
+            padding: 54px 20px !important;
+            color: var(--text-muted) !important;
+            text-align: center;
+            white-space: normal;
+        }
+
+        .empty-state i {
+            display: block;
+            margin-bottom: 12px;
+            color: #64748b;
+            font-size: 2.3rem;
+        }
+
+        @media (max-width: 1199.98px) {
+            .main-content { padding: 30px; }
+        }
+
+        @media (max-width: 991.98px) {
+            .main-content {
+                margin-left: 0;
+                padding: 100px 24px 30px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .main-content { padding: 88px 16px 24px; }
+            .section-heading { padding: 20px 18px 16px; }
+            .table-dashboard thead th,
+            .table-dashboard tbody td { padding-right: 16px; padding-left: 16px; }
+            .stat-card { padding: 20px; }
+        }
+    

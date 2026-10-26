@@ -1,0 +1,415 @@
+
+:root {
+    --page-bg: #101318;
+    --panel-bg: #151a23;
+    --panel-inner: #1b222e;
+    --panel-border: #2c3442;
+    --text-main: #f5f7fb;
+    --text-muted: #98a4b6;
+    --accent:  #2563eb;
+    
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    color: var(--text-main);
+    background: var(--page-bg);
+}
+
+/* Main */
+main {
+    min-height: 100vh;
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    min-width: 0;
+    padding: 32px;
+    transition: padding .2s ease;
+}
+
+main .container-fluid {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+/* Card */
+.table-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--panel-border);
+    border-radius: 18px;
+    color: var(--text-main);
+    background: var(--panel-bg);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .12);
+}
+
+/* Header */
+.table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 24px;
+    margin-bottom: 0 !important;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--panel-border);
+}
+
+.table-header > div {
+    min-width: 0;
+}
+
+.table-header > div:last-child {
+    flex-shrink: 0;
+}
+
+.table-header .btn {
+    border-radius: 9px;
+    font-weight: 600;
+}
+
+.page-title {
+    margin-bottom: 8px;
+    color: var(--text-main);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 750;
+}
+
+.page-description {
+    margin-bottom: 0;
+    color: var(--text-muted);
+    font-size: .92rem;
+}
+
+/* Table */
+.table-responsive {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+#repairTable {
+    width: 100% !important;
+    margin: 0 !important;
+    border-collapse: separate;
+    border-spacing: 0;
+    --bs-table-bg: transparent;
+    --bs-table-color: #dbe2ec;
+    --bs-table-border-color: #28303c;
+    --bs-table-hover-bg: #1b2330;
+    --bs-table-hover-color: #fff;
+}
+
+#repairTable thead th {
+    padding: 15px 18px;
+    color: var(--text-muted) !important;
+    background: #181e28 !important;
+    border-bottom: 1px solid var(--panel-border);
+    font-size: .76rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+#repairTable tbody td {
+    padding: 16px 18px;
+    color: #dbe2ec;
+    background: var(--panel-bg);
+    border-color: #28303c;
+    vertical-align: middle;
+}
+
+#repairTable tbody tr:hover > * {
+    color: #fff !important;
+    background: #1b2330 !important;
+    box-shadow: none;
+}
+
+/* Action buttons */
+.action-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    min-width: 0;
+}
+
+.action-buttons .btn {
+    border-radius: 7px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* DataTables */
+.dt-container {
+    width: 100%;
+    min-width: 0;
+    padding: 20px 24px;
+    color: var(--text-muted) !important;
+}
+
+.dt-container .dt-layout-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.dt-container .dt-layout-cell {
+    min-width: 0;
+}
+
+.dt-container .dt-search,
+.dt-container .dt-length,
+.dt-container .dt-info {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.dt-container .dt-search input {
+    max-width: 100%;
+    padding: 4px 8px !important;
+    font-size: 12px !important;
+    height: 30px !important;
+    padding: 7px 10px !important;
+    background-color:#1b222e!important;
+    color: var(--text-primary) !important;
+   border: 1px solid #354052 !important;
+    border-radius: 8px !important;
+    outline: none !important;
+    box-shadow: none !important;
+
+}
+
+.dt-container .dt-length select,
+.dt-container .dt-input {
+    max-width: 100%;
+    padding: 7px 10px!important;
+
+font-size: 12px !important;
+height: 36px;
+    color: var(--text-main) !important;
+    background: var(--panel-inner) !important;
+    border: 1px solid #354052 !important;
+    border-radius: 9px !important;
+    outline: none;
+    box-shadow: none !important;
+}
+
+.dt-container .dt-search input:focus,
+.dt-container .dt-length select:focus,
+.dt-container .dt-input:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 3px rgb(79 140 255 / 12%) !important;
+}
+
+.dt-container .dt-length select option {
+    color: var(--text-main);
+    background: var(--panel-inner);
+}
+
+/* Pagination */
+.dt-container .dt-paging {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.dt-container .dt-paging .dt-paging-button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 38px;
+    min-height: 38px;
+    padding: 7px 12px !important;
+    margin: 0 !important;
+    color: var(--text-main) !important;
+    background: var(--panel-inner) !important;
+    border: 1px solid var(--panel-border) !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.dt-container .dt-paging .dt-paging-button.current,
+.dt-container .dt-paging .dt-paging-button.current:hover {
+    color: #fff !important;
+    background: var(--accent) !important;
+    border-color: var(--accent) !important;
+    font-weight: 600;
+}
+
+.dt-container .dt-paging .dt-paging-button:hover:not(.current):not(.disabled) {
+    color: #fff !important;
+    background: #283449 !important;
+    border-color: #354052 !important;
+}
+
+.dt-container .dt-paging .dt-paging-button.disabled {
+    color: #687386 !important;
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.dt-container .dt-paging .dt-paging-button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Status badges */
+.status-badge {
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Tablet */
+@media (max-width: 991.98px) {
+    main {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 100px 24px 30px !important;
+    }
+
+    .table-header {
+        align-items: flex-start;
+    }
+
+    #repairTable thead th,
+    #repairTable tbody td {
+        padding: 12px 10px;
+        font-size: 13px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767.98px) {
+    body {
+        font-size: 14px;
+    }
+
+    main {
+        padding: 90px 12px 24px !important;
+    }
+
+    .table-card {
+        border-radius: 12px;
+    }
+
+    .table-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        padding: 18px;
+    }
+
+    .table-header > div:last-child,
+    .table-header .btn {
+        width: 100%;
+    }
+
+    .table-header .btn {
+        padding: 10px;
+    }
+
+    .page-title {
+        font-size: 20px;
+    }
+
+    .page-description {
+        font-size: 13px;
+    }
+
+    #repairTable {
+        min-width: 1000px;
+    }
+
+    .dt-container {
+        padding: 16px;
+    }
+
+    .dt-container .dt-layout-row {
+        align-items: flex-start;
+    }
+
+    .dt-container .dt-search,
+    .dt-container .dt-length {
+        width: 100%;
+    }
+
+    .dt-container .dt-search label {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .dt-container .dt-search input {
+        flex: 1;
+        min-width: 0;
+        width: auto !important;
+        margin-left: 0 !important;
+    }
+
+    .dt-container .dt-paging {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 6px;
+    }
+
+    .dt-container .dt-paging .dt-paging-button {
+        flex-shrink: 0;
+    }
+
+    .action-buttons {
+        gap: 4px;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 575.98px) {
+    main {
+        padding: 84px 8px 20px !important;
+    }
+
+    .page-title {
+        font-size: 18px;
+    }
+
+    .page-description {
+        font-size: 12px;
+    }
+
+    .table-header {
+        padding: 15px;
+    }
+
+    .action-buttons .btn {
+        padding: 5px 8px;
+        font-size: 11px;
+    }
+}

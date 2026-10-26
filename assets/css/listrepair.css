@@ -1,0 +1,582 @@
+
+    :root {
+        --page-bg: #101318;
+        --panel-bg: #151a23;
+        --panel-border: #2c3442;
+        --text-main: #f5f7fb;
+        --text-muted: #98a4b6;
+         --panel-inner: #1b222e;
+        --accent: #4f8cff;
+
+           
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        width: 100%;
+        min-height: 100%;
+    }
+
+    body {
+        margin: 0;
+        overflow-x: hidden;
+        background: var(--page-bg);
+        color: var(--text-main);
+    }
+
+    /* Main */
+    main {
+        width: auto;
+        min-width: 0;
+        min-height: 100vh;
+        margin-left: 250px;
+        padding: 32px;
+    }
+
+    /* Page Header */
+    .table-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 24px;
+        margin-bottom: 0 !important;
+        border-bottom: 1px solid var(--panel-border);
+    }
+
+    .page-title {
+        margin-bottom: 8px;
+        color: var(--text-main);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 750;
+    }
+
+    .page-description {
+        margin-bottom: 0;
+        color: var(--text-muted);
+        font-size: 0.92rem;
+    }
+
+    .table-header .btn {
+        border-radius: 9px;
+        font-weight: 600;
+    }
+
+    /* Table Card */
+    .table-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 0;
+        overflow: hidden;
+        background: var(--panel-bg);
+        border: 1px solid var(--panel-border);
+        border-radius: 18px;
+    }
+
+    /* DataTables Container */
+    .table-card .dt-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0;
+        padding: 20px 24px;
+        color: var(--text-muted);
+    }
+
+    /* Top and Bottom Rows: Search, Length, Info, Pagination */
+    .dt-container .dt-layout-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 14px;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+
+    .dt-container .dt-layout-cell {
+        min-width: 0;
+    }
+
+    /* Actual Table Area */
+    .dt-container .dt-layout-table,
+    .dt-container .dt-layout-table > .dt-layout-cell {
+        display: block;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0;
+        padding: 0;
+    }
+
+    /* Table Responsive */
+    .table-responsive {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+    }
+
+    /* Repair Table */
+    #repairTable {
+        display: table !important;
+        width: 100% !important;
+        max-width: none;
+        margin: 0 !important;
+        border-collapse: separate;
+        border-spacing: 0;
+        --bs-table-bg: transparent;
+        --bs-table-color: #dbe2ec;
+        --bs-table-border-color: #28303c;
+        --bs-table-hover-bg: #1b2330;
+        --bs-table-hover-color: #fff;
+    }
+
+    #repairTable thead th {
+        padding: 15px 18px;
+        background: #181e28 !important;
+        color: var(--text-muted) !important;
+        border-bottom: 1px solid var(--panel-border);
+        font-size: 0.76rem;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    #repairTable tbody td {
+        padding: 16px 18px;
+        background: var(--panel-bg);
+        color: #dbe2ec;
+        border-color: #28303c;
+        vertical-align: middle;
+    }
+
+    #repairTable tbody tr:hover > * {
+        background: #1b2330 !important;
+        color: #fff !important;
+        box-shadow: none;
+    }
+
+    /* Action Buttons */
+    .action-buttons {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px;
+        min-width: 230px;
+    }
+
+    .action-buttons .btn {
+        border-radius: 7px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+ 
+/* DataTables Layout */
+.dt-container {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 20px 24px;
+  
+}
+
+.dt-container .dt-layout-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.dt-container .dt-layout-cell {
+    min-width: 0;
+}
+
+.dt-container .dt-search label,
+.dt-container .dt-length label,
+.dt-container .dt-info {
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+/* Search Input */
+.dt-container .dt-search input {
+  max-width: 100%;
+    padding: 4px 8px !important;
+    font-size: 12px !important;
+    height: 30px !important;
+    padding: 7px 10px !important;
+    background-color: var(--inner-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.dt-container .dt-search input:focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15) !important;
+}
+
+/* Length Dropdown */
+.dt-container .dt-length select {
+    max-width: 100%;
+   
+    background-color: var(--inner-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+}
+
+.dt-container .dt-length select option {
+    background-color: var(--inner-bg);
+    color: var(--text-primary);
+}
+
+/* Pagination */
+.dt-container .dt-paging {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+/* Pagination */
+.dt-container .dt-paging .dt-paging-button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 7px 12px !important;
+    background: transparent !important;
+    color: #cbd5e1 !important;
+    border: 1px solid var(--panel-border) !important;
+    border-radius: 7px !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+/* Hover */
+.dt-container .dt-paging .dt-paging-button:hover:not(.current):not(.disabled) {
+    background: #252d3b !important;
+    color: #ffffff !important;
+    border-color: #4b5563 !important;
+}
+
+/* หน้าปัจจุบัน */
+.dt-container .dt-paging .dt-paging-button.current,
+.dt-container .dt-paging .dt-paging-button.current:hover {
+    background: #2563eb !important;
+    color: #ffffff !important;
+    border-color: #2563eb !important;
+}
+
+/* ปุ่มที่กดไม่ได้ */
+.dt-container .dt-paging .dt-paging-button.disabled,
+.dt-container .dt-paging .dt-paging-button.disabled:hover {
+    background: transparent !important;
+    color: #626779 !important;
+    border: 1px solid var(--panel-border) !important;
+    border-radius: 7px !important;
+    cursor: not-allowed !important;
+    opacity: 0.6;
+}
+.dt-container .dt-paging .dt-paging-button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Prevent Bootstrap Light Background */
+.dt-container .row {
+    color: var(--text-secondary);
+}
+
+
+    /* Status Badges */
+    .status-badge {
+        padding: 7px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    /* Repair Detail Modal */
+    #repairDetailModal .modal-content {
+        background: var(--panel-bg);
+        color: var(--text-main);
+        border: 1px solid var(--panel-border);
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    .label {
+    color: #a00b0b !important;
+}
+
+    #repairDetailModal .modal-header,
+    #repairDetailModal .modal-footer {
+        border-color: var(--panel-border);
+    }
+
+    #repairDetailModal .modal-title {
+        font-weight: 700;
+    }
+
+    #repairDetailModal .btn-close {
+        filter: invert(1) grayscale(100%) brightness(200%);
+    }
+
+    #repairDetailModal .modal-body {
+        color: #dbe2ec;
+    }
+
+    /* SweetAlert2 */
+    .swal2-popup {
+        background: #1e1e2d !important;
+        color: #e5e7eb !important;
+        border: 1px solid #343447;
+        border-radius: 16px;
+        padding: 28px;
+        box-shadow: 0 20px 60px rgb(0 0 0 / 40%) !important;
+    }
+
+    .swal2-title {
+        color: #f9fafb !important;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .swal2-html-container {
+        color: #a1a1b5 !important;
+        font-size: 15px;
+    }
+
+    .swal2-container.swal2-backdrop-show {
+        background: rgb(0 0 0 / 75%) !important;
+    }
+
+    .swal2-styled {
+        border-radius: 8px !important;
+        padding: 10px 24px !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+    }
+
+    .swal-delete-confirm {
+        background: #a42433 !important;
+        color: #fff !important;
+        border: none !important;
+        border-radius: 8px !important;
+        padding: 10px 20px !important;
+        margin: 0 5px !important;
+    }
+
+    .swal-delete-confirm:hover {
+        background: #b11424 !important;
+    }
+
+    .swal-delete-cancel {
+        background: #495057 !important;
+        color: #fff !important;
+        border: none !important;
+        border-radius: 8px !important;
+        padding: 10px 20px !important;
+        margin: 0 5px !important;
+    }
+
+    .swal-delete-cancel:hover {
+        background: #343a40 !important;
+    }
+
+    /* Tablet */
+    @media (max-width: 991.98px) {
+        main {
+            margin-left: 0;
+            padding: 100px 24px 30px;
+        }
+
+        .table-header {
+            align-items: flex-start;
+        }
+
+        #repairTable thead th,
+        #repairTable tbody td {
+            padding: 12px 10px;
+            font-size: 13px;
+        }
+    }
+
+    /* Mobile */
+    @media (max-width: 767.98px) {
+        body {
+            font-size: 14px;
+        }
+
+        main {
+            padding: 90px 12px 24px;
+        }
+
+        .table-card {
+            border-radius: 12px;
+        }
+
+        .table-header {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 16px;
+            padding: 18px;
+        }
+
+        .table-header > div:last-child,
+        .table-header .btn {
+            width: 100%;
+        }
+
+        .table-header .btn {
+            padding: 10px;
+        }
+
+        .page-title {
+            font-size: 20px;
+        }
+
+        .page-description {
+            font-size: 13px;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        #repairTable {
+            min-width: 1000px;
+        }
+
+        .table-card .dt-container {
+            padding: 16px;
+        }
+
+        .dt-container .dt-layout-row {
+            align-items: flex-start;
+        }
+
+        .dt-container .dt-search,
+        .dt-container .dt-length {
+            width: 100%;
+        }
+
+        .dt-container .dt-search label {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .dt-container .dt-search input {
+            flex: 1;
+            min-width: 0;
+            width: auto !important;
+            margin-left: 0 !important;
+        }
+
+        .dt-container .dt-paging {
+            justify-content: flex-start;
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            padding-bottom: 6px;
+        }
+
+        .dt-container .dt-paging .dt-paging-button {
+            flex-shrink: 0;
+        }
+
+        .action-buttons {
+            gap: 4px;
+        }
+    }
+
+    /* Small Mobile */
+    @media (max-width: 575.98px) {
+        main {
+            padding: 84px 8px 20px;
+        }
+
+        .page-title {
+            font-size: 18px;
+        }
+
+        .page-description {
+            font-size: 12px;
+        }
+
+        .table-header {
+            padding: 15px;
+        }
+
+        .action-buttons .btn {
+            padding: 5px 8px;
+            font-size: 11px;
+        }
+    }
+    /* เปลี่ยนสี label ทั้งหมดใน Modal รายละเอียดแจ้งซ่อม */
+#repairDetailContent label.form-label {
+    color: #ffffff !important;
+}
+
+/* DataTables Search */
+.dt-container .dt-search input, .dt-container .dt-length select, .dt-container .dt-input {
+    max-width: 100%;
+    padding: 7px 10px!important;
+
+font-size: 12px !important;
+height: 36px;
+    margin-right: 5px;
+    color: var(--text-main) !important;
+    background: var(--panel-inner) !important;
+    border: 1px solid #354052 !important;
+    border-radius: 9px !important;
+    outline: none;
+    box-shadow: none !important;
+}
+
+sel
+
+/* Search focus */
+.dt-container .dt-search input:focus {
+    border-color: var(--accent) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(79, 140, 255, 0.15) !important;
+  
+}
+
+
+/* Pagination: กรอบปุ่มทุกปุ่ม */
+.dt-container .dt-paging .dt-paging-button {
+    border: 1px solid var(--panel-border) !important;
+    border-radius: 7px !important;
+}
+
+/* ปุ่ม Previous / Next ที่กดไม่ได้ */
+.dt-container .dt-paging .dt-paging-button.disabled,
+.dt-container .dt-paging .dt-paging-button.disabled:hover {
+    border: 1px solid var(--panel-border) !important;
+}
+
+/* ปุ่มหน้าปัจจุบัน */
+.dt-container .dt-paging .dt-paging-button.current {
+    border: 1px solid #2563eb !important;
+}
